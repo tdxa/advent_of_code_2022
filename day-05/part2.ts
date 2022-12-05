@@ -9,7 +9,7 @@ const steps = parseSteps(rawSteps)
 
 for (const step of steps) {
     const moveCrate = stacks[step.from].splice(0, step.cratePosition)
-    stacks[step.to].unshift(...moveCrate.reverse())
+    stacks[step.to].unshift(...moveCrate)
 }
 
 console.log(stacks.map(stack => stack[0]).join(""))
